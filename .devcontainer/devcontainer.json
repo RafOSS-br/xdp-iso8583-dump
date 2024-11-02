@@ -1,0 +1,51 @@
+{
+    "name": "ebpf-golang-devcontainer",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "runArgs": ["--privileged"],
+    "privileged": true,
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "bpfdeploy.bpftrace",
+                "golang.go",
+                "golang.go-nightly",
+                "ms-vscode.makefile-tools",
+                "redhat.vscode-yaml",
+                "eamodio.gitlens",
+                "streetsidesoftware.code-spell-checker"
+            ],
+            "settings": {
+                "C_Cpp.default.includePath": [
+                    "${workspaceFolder}/**",
+                    "/usr/include",
+                    "/usr/local/include",
+                    "/usr/lib/clang/16/include",
+                    "/kernel/linux/include",
+                    "/kernel/linux/arch/x86/include",
+                    "/kernel/linux/arch/x86/include/generated",
+                    "/kernel/linux/include/uapi",
+                    "/kernel/linux/arch/x86/include/uapi",
+                    "/kernel/linux/tools/testing/selftests/bpf/include",
+                    "/usr/include/linux",
+                    "/usr/include/x86_64-linux-gnu"
+                ],
+                "C_Cpp.default.compilerPath": "/usr/bin/clang",
+                "C_Cpp.default.intelliSenseMode": "linux-clang-x64",
+                "go.gopath": "/go",
+                "go.useLanguageServer": true,
+                "go.toolsManagement.autoUpdate": true,
+                "files.associations": {
+                    "*.bpf.h": "c",
+                    "*.h": "c",
+                    "linux/*": "c"
+                }
+            }
+        }
+    },
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}
